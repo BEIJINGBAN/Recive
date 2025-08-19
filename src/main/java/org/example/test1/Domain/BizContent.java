@@ -6,7 +6,7 @@ public class BizContent {
     private String mchOrderNo;
     private String code;
     private String message;
-
+    private String fgTransNo;
 
     public String getRetailOrderNo() {
         return retailOrderNo;
@@ -27,6 +27,14 @@ public class BizContent {
     public String getMessage() { return message; }
     public void setMessage(String message) { this.message = message; }
 
+    public String getFgTransNo() {
+        return fgTransNo;
+    }
+
+    public void setFgTransNo(String fgTransNo) {
+        this.fgTransNo = fgTransNo;
+    }
+
     @Override
     public String toString() {
         return "BizContent{" +
@@ -34,6 +42,7 @@ public class BizContent {
                 ", mchOrderNo='" + mchOrderNo + '\'' +
                 ", code='" + code + '\'' +
                 ", message='" + message + '\'' +
+                ", fgTransNo='" + fgTransNo + '\'' +
                 '}';
     }
 }

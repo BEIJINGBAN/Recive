@@ -9,16 +9,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
 import java.util.TreeMap;
 
 
 @RestController
+@RequestMapping("/fileUpload")
 public class NoticeController {
 
     private static final Logger log = LoggerFactory.getLogger(NoticeController.class);
 
-    @PostMapping("/hello")
+    @PostMapping("/callback")
     public String hello(@RequestBody NoticeRequest request) {
 
         String sign = request.getSign();
@@ -30,6 +30,7 @@ public class NoticeController {
         bizParams.put("mchOrderNo", request.getBizContent().getMchOrderNo());
         bizParams.put("code", request.getBizContent().getCode());
         bizParams.put("message", request.getBizContent().getMessage());
+        bizParams.put("fgTransNo", request.getBizContent().getFgTransNo());
 
         params.put("signType", request.getSignType());
         params.put("uniqueNo", request.getUniqueNo());
